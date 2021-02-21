@@ -1,0 +1,681 @@
+/********** Variables ***********/
+
+:root {
+    --darkLow: rgba(0, 0, 0, 0.2);
+    --darkMediumLow: rgba(0, 0, 0, 0.4);
+    --darkMedium: rgba(0, 0, 0, 0.6);
+    --darkMediumHigh: rgba(0, 0, 0, 0.8);
+    --darkHigh: #000;
+
+    --darkListLow: rgba(0, 0, 0, 0.1);
+    --lightListLow: rgba(255, 255, 255, 0.1);
+
+    --lightLow: rgba(255, 255, 255, 0.2);
+    --lightMediumLow: rgba(255, 255, 255, 0.4);
+    --lightMedium: rgba(255, 255, 255, 0.6);
+    --lightMediumHigh: rgba(255, 255, 255, 0.8);
+    --lightHigh: #FFF;
+
+    --grayLow: rgba(36, 36, 36, 0.2);
+    --grayMediumLow: rgba(36, 36, 36, 0.4);
+    --grayMedium: rgba(36, 36, 36, 0.6);
+    --grayMediumHigh: rgba(36, 36, 36, 0.8);
+    --grayHigh: #242424;
+
+    --accent: #0078D7;
+}
+
+/********** General Styles ***********/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+  
+body {
+    cursor: default;
+}
+
+body,
+input[type="text"] {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+i {
+    font-style: normal;
+}
+
+#desktop {
+    align-items: flex-end;
+    background: url('https://res.cloudinary.com/ifanrcpgh/image/upload/v1567454623/wallpaper.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    min-height: 100vh;
+}
+
+#launcher,
+#controls,
+#notifications {
+    border-radius: 4px;
+}
+
+.acrylic {
+    backdrop-filter: blur(18px) saturate(125%);
+}
+
+.account-info,
+.file-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn {
+    border-radius: 30px;
+    font-size: 13px;
+    padding: 4px 12px;
+}
+
+.btn-icon {
+    border-radius: 2px;
+    padding: 12px;
+}
+
+.divider {
+    height: 5px;
+}
+
+.divider-bar {
+    height: 1px;
+    width: 100%;
+}
+
+.flex-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+input[type=text],
+.app-wrapper,
+.file-wrapper,
+.notification-content {
+    border-radius: 2px;
+}
+
+input[type=text]:focus,
+input[type=text]:hover,
+.action-icon:hover,
+.app-wrapper:hover,
+.btn:hover,
+.file-wrapper:hover,
+.notification-content:hover {
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+}
+
+input[type=text],
+.action-icon,
+.btn,
+.notification-content {
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.05);
+}
+
+input[type=text],
+.action-icon,
+.app-wrapper,
+.btn,
+.btn-icon,
+.file-wrapper,
+.notification-content,
+.taskbar-icon {
+    transition: all 140ms;
+}
+
+.mi {
+    font-size: 16px;
+}
+
+.rounded {
+    border-radius: 50%;
+}
+
+.segoe-icon {
+    font-family: 'Segoe MDL2 Assets';
+}
+
+.subtitle {
+    font-size: 13px;
+}
+
+[class^="title-"] {
+    font-weight: 600;
+    line-height: 20px;
+}
+
+.title-1 {
+    font-size: 16px;
+}
+
+.title-2 {
+    font-size: 14px;
+}
+
+/********** Taskbar ***********/
+
+#taskbar {
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    width: 100%;
+}
+
+#taskbar .divider {
+    background-color: transparent;
+    height: 100%;
+    width: 5px;
+}
+
+#taskbar .divider-bar {
+    height: 24px;
+    width: 1px;
+}
+
+.taskbar-content {
+    display: flex;
+}
+
+.taskbar-icon {
+    width: 48px;
+}
+
+.taskbar-icon img {
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+}
+
+#launcher-icon img {
+    height: 16px;
+    width: 16px;
+}
+
+#taskview .mi-TaskViewExpanded {
+    display: none;
+}
+
+#taskview:hover .mi-TaskView {
+    display: none;
+}
+
+#taskview:hover .mi-TaskViewExpanded {
+    display: inline-block;
+}
+
+.taskbar-text {
+    padding: 0px 12px;
+}
+
+#peek {
+    width: 5px;
+}
+
+/********** Launcher ***********/
+
+#launcher {
+    bottom: 46px;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    left: 6px;
+    max-height: 600px;
+    overflow: hidden;
+    position: absolute;
+}
+
+#launcher .divider {
+    margin-top: 20px;
+}
+
+.launcher-content {
+    margin: 0px 36px;
+}
+
+.launcher-search {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    position: relative; 
+    margin: 12px 0;
+    margin-top: 36px;
+}
+
+.launcher-search i {
+    position: absolute;
+}
+
+.launcher-search .mi-Search {
+    left: 26px;
+}
+
+.launcher-search .mi-Microphone {
+    right: 24px;
+}
+
+input[type=text] {
+    border: none;
+    font-size: 16px;
+    max-height: 44px;
+    outline: none;
+    padding: 12px 56px;
+    width: 100%;
+}
+
+.launcher-header {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 0px;
+}
+
+.app-list {
+    display: grid;
+    grid-column-gap: 16px;
+    grid-row-gap: 8px;
+    grid-template-columns: 100px 100px 100px 100px 100px;
+}
+
+.app-wrapper {
+    flex-direction: column;
+    padding: 6px 0px;
+}
+
+.app-wrapper:hover {
+    transform: scale(1.04);
+}
+
+.app-wrapper > * {
+    width: 100%;
+}
+
+.app-wrapper p {
+    line-height: 20px;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.app-icon {
+    height: 56px;
+    overflow: hidden;
+}
+
+.app-icon img {
+    height: 48px;
+    width: 48px;
+}
+
+.file-wrapper {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-column-gap: 12px;
+    height: 50px;
+    padding: 0px 24px;
+}
+
+.file-icon img {
+    height: 36px;
+    width: 36px;
+}
+
+/********** Control Center ***********/
+
+.controlCenter {
+    bottom: 46px;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-row-gap: 6px;
+    height: calc(100vh - 52px);
+    position: absolute;
+    right: 6px;
+    width: 390px;
+}
+
+.controlCenter > div {
+    overflow: hidden;
+}
+
+#notifications {
+    font-size: 14px;
+    padding: 12px 18px;
+}
+
+.notification-wrapper {
+    margin-bottom: 12px;
+}
+
+.notification-wrapper > div {
+    padding: 12px;
+    width: 100%;
+}
+
+.notification-header {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.notification-header .mi {
+    font-size: 12px;
+}
+
+.notification-header img {
+    height: 16px;
+    width: 16px;
+}
+
+.title-3 {
+    margin-left: 8px;
+}
+
+.notification-content {
+    font-size: 14px;
+    position: relative;
+}
+
+.notification-content .mi-ChevronUpMed {
+    font-size: 12px;
+    position: absolute;
+    right: 24px;
+    top: 24px;
+}
+
+.notification-info {
+    line-height: 1.4;
+    width: 280px;
+}
+
+.notification-time {
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+.resizer {
+    align-items: center;
+    display: flex;
+    height: 20px;
+    justify-content: center;
+}
+
+.resizer-tab {
+    border-radius: 30px;
+    height: 6px;
+    width: 40px;
+}
+
+.account {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-column-gap: 12px;
+    padding: 12px 18px;
+}
+
+.account-icon img {
+    height: 48px;
+    width: 48px;
+}
+
+.controls-content {
+    padding: 0px 6px;
+}
+
+.equalizers {
+    margin: 6px 0px;
+}
+
+.equalizer-wrapper {
+    align-items: center;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-column-gap: 12px;
+    padding: 12px;
+}
+
+.equalizer-wrapper .mi-ChevronRightMed {
+    font-size: 12px;
+}
+
+.equalizer-wrapper:nth-child(2) > .mi-ChevronRightMed {
+    opacity: 0;
+}
+
+.equalizer {
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+
+.equalizer-background {
+    height: 2px;
+    position: absolute;
+    width: calc(50% - 9px);
+    z-index: 2;
+}
+
+input[type="range"] {
+    height: 2px;
+    outline: none;
+    width: 100%;
+    z-index: 1;
+    -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    -webkit-appearance: none;
+}
+
+.quick-actions {
+    display: grid;
+    grid-column-gap: 12px;
+    grid-row-gap: 6px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 12px;
+}
+
+.action-wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.action-wrapper p {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.action-icon {
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+    position: relative;
+    width: 100%;
+}
+
+.action-active {
+    height: 20px;
+    left: 2px;
+    position: absolute;
+    top: 10px;
+    width: 2px;
+}
+
+.system-icons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/********** Theme ***********/
+
+@media (prefers-color-scheme: dark) {
+    body {
+        color: var(--lightHigh);
+    }
+    
+    input[type="range"] {
+        background: var(--lightMediumLow);
+    }
+    
+    input[type=text] {
+        background-color: var(--lightListLow);
+        color: var(--lightHigh);
+    }
+    
+    input[type=text]:focus,
+    input[type=range]::-webkit-slider-thumb:hover,
+    .action-icon:hover,
+    .app-wrapper:hover,
+    .btn:hover,
+    .btn-icon:hover,
+    .file-wrapper:hover,
+    .notification-content:hover {
+        background-color: var(--lightListLow);
+    }
+    
+    input[type=text]::placeholder {
+        color: var(--lightMedium);
+    }
+    
+    input[type=range]::-webkit-slider-thumb,
+    .action-active,
+    .equalizer-background {
+        background-color: var(--accent);
+    }
+    
+    #peek {
+        border-left: 1px solid var(--lightListLow);
+    }
+    
+    .acrylic {
+        background-color: var(--grayMediumHigh);
+    }
+    
+    .active {
+        background-color: var(--lightLow) !important;
+    }
+    
+    .action-icon,
+    .btn,
+    .notification-content,
+    .resizer-tab {
+        background-color: var(--lightListLow);
+    }
+    
+    .divider-bar {
+        background-color: var(--lightListLow);
+    }
+
+    .notification-content .mi-ChevronUpMed,
+    .notification-info,
+    .notification-time {
+        color: var(--lightMedium);
+    }
+    
+    .subtitle {
+        color: var(--lightMedium)
+    }
+    
+    .taskbar-content > div:hover {
+        background-color: var(--lightListLow);
+    }
+    
+    .launcher-search .mi {
+        color: var(--lightHigh);
+    }
+
+}
+  
+@media (prefers-color-scheme: light) {
+
+    body {
+        color: var(--darkHigh);
+    }
+    
+    input[type="range"] {
+        background: var(--darkMediumLow);
+    }
+    
+    input[type=text] {
+        background-color: var(--lightMedium);
+        color: var(--darkHigh);
+    }
+    
+    input[type=text]:focus,
+    input[type=range]::-webkit-slider-thumb:hover,
+    .action-icon:hover,
+    .app-wrapper:hover,
+    .btn:hover,
+    .btn-icon:hover,
+    .file-wrapper:hover,
+    .notification-content:hover {
+        background-color: var(--lightHigh);
+    }
+    
+    input[type=text]::placeholder {
+        color: var(--darkMedium);
+    }
+    
+    input[type=range]::-webkit-slider-thumb,
+    .action-active,
+    .equalizer-background {
+        background-color: var(--accent);
+    }
+    
+    #peek {
+        border-left: 1px solid var(--darkListLow);
+    }
+    
+    .acrylic {
+        background-color: var(--lightMediumHigh);
+    }
+    
+    .active {
+        background-color: var(--lightHigh) !important;
+    }
+    
+    .action-icon,
+    .btn,
+    .notification-content,
+    .resizer-tab {
+        background-color: var(--lightMedium);
+    }
+    
+    .divider-bar {
+        background-color: var(--darkListLow);
+    }
+
+    .notification-content .mi-ChevronUpMed,
+    .notification-info,
+    .notification-time {
+        color: var(--darkMedium);
+    }
+    
+    .subtitle {
+        color: var(--darkMedium)
+    }
+    
+    .taskbar-content > div:hover {
+        background-color: var(--lightMediumLow);
+    }
+    
+    .launcher-search .mi {
+        color: var(--darkHigh);
+    }
+
+}
